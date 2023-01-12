@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  api:
+    container_name: "api"
+    build:
+      context: "./api"
+      dockerfile: "Dockerfile"
+    ports:
+      - "127.0.0.1:8000:8000"
+      - "5001"
+  fireml:
+    container_name: "fireml"
+    build:
+      context: "./FireML/FireClassifier"
+      dockerfile: "Dockerfile"
